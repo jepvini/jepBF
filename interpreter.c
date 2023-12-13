@@ -37,7 +37,7 @@ int main(int argc, char *argv[]) {
   char c; // why not call it c
   while (1) {
     c = fgetc(src);
-    if (c == EOF)
+    if (feof(src))
       break;
     evaluate(src, c); // src is needed for the loop part
   }

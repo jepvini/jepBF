@@ -112,7 +112,7 @@ void O0(FILE *src, FILE *out) {
   char c; // why not call it c
   while (1) {
     c = fgetc(src);
-    if (c == EOF)
+    if (feof(src))
       break;
 
     for (int i = 0; i < c; i++) {
@@ -132,7 +132,7 @@ void O1(FILE *src, FILE *out) {
   while (1) {
     last_c = c;
     c = fgetc(src);
-    if (c == EOF)
+    if (feof(src))
       break;
     delta = c - last_c;
 
@@ -252,7 +252,7 @@ void O2(FILE *src, FILE *out) {
   while (1) {
     last_c = c;
     c = fgetc(src);
-    if (c == EOF)
+    if (feof(src))
       break;
 
     if (POS > MAX_POS) {
